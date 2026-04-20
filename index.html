@@ -41,28 +41,35 @@
 
   <!-- ── Hero ── -->
   <section class="hero" id="home">
-    <canvas class="hero-canvas" id="heroCanvas"></canvas>
-    <div class="hero-overlay"></div>
+    <!-- Layered background: image → dark overlay → vignette -->
+    <div class="hero-bg"></div>
+    <div class="hero-overlay-dark"></div>
+    <div class="hero-vignette"></div>
+
+    <!-- Glass content panel -->
     <div class="container hero-content">
-      <div class="hero-badge fade-in">
-        <span class="section-label">Telecom Infrastructure Since 2005</span>
-      </div>
-      <h1 class="hero-title fade-in">
-        Building the Future of<br /><span class="hero-accent">Telecom Infrastructure</span>
-      </h1>
-      <p class="hero-sub fade-in">
-        Delivering reliable fiber optic networks, engineering, and turnkey telecom solutions across the Kingdom
-      </p>
-      <div class="hero-actions fade-in">
-        <a href="services.html" class="btn btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          Our Services
-        </a>
-        <a href="contact.html" class="btn btn-outline">Contact Us</a>
-      </div>
-      <div class="hero-scroll-hint fade-in">
-        <span>Scroll to explore</span>
-        <div class="scroll-line"></div>
+      <div class="hero-glass fade-in">
+        <div class="hero-badge">
+          <span class="section-label">Telecom Infrastructure Since 2005</span>
+        </div>
+        <h1 class="hero-title fade-in">
+          Building the Future of<br />
+          <span class="hero-accent">Telecom Infrastructure</span>
+        </h1>
+        <p class="hero-sub fade-in">
+          Delivering reliable fiber optic networks, engineering, and turnkey telecom solutions across the Kingdom
+        </p>
+        <div class="hero-actions fade-in">
+          <a href="services.html" class="btn btn-hero-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            Our Services
+          </a>
+          <a href="contact.html" class="btn btn-hero-outline">Contact Us</a>
+        </div>
+        <div class="hero-scroll-hint fade-in">
+          <span>Scroll to explore</span>
+          <div class="scroll-line"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -467,6 +474,5 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/home.js"></script>
 </body>
 </html>
