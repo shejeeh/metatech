@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — MetaTech Telecom Infrastructure</title>
+  <meta name="description" content="Get in touch with MetaTech for fiber optic installation, OSP design, FTTH, and telecom infrastructure projects in Saudi Arabia." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+        <div class="nav-logo-text"><span class="brand">MetaTech</span><span class="tagline">Telecom Infrastructure</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary nav-cta">Get in Touch</a>
+      <button class="nav-hamburger" id="menuBtn"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <span class="section-label page-header-label">Reach Out</span>
+      <h1>Contact Us</h1>
+      <p>Ready to discuss your next telecom infrastructure project? Our team is ready to help.</p>
+    </div>
+  </header>
+
+  <!-- Contact section -->
+  <section class="section-gap">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Form -->
+        <div class="contact-form-wrap fade-in">
+          <h2 class="contact-form-title">Send Us a Message</h2>
+          <p style="margin-bottom:36px;font-size:0.9rem;">Fill in the form and one of our project managers will respond within one business day.</p>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name <span class="req">*</span></label>
+                <input type="text" id="firstName" name="firstName" placeholder="Ahmed" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name <span class="req">*</span></label>
+                <input type="text" id="lastName" name="lastName" placeholder="Al-Rashid" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="company">Company / Organization</label>
+              <input type="text" id="company" name="company" placeholder="Your company name" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address <span class="req">*</span></label>
+                <input type="email" id="email" name="email" placeholder="ahmed@company.sa" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+966 5X XXX XXXX" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service">Service Required</label>
+              <select id="service" name="service">
+                <option value="" selected disabled>Select a service...</option>
+                <option value="osp">OSP Design &amp; Construction</option>
+                <option value="fiber">Fiber Optic Installation</option>
+                <option value="ftth">FTTH Networks</option>
+                <option value="testing">Testing &amp; Commissioning</option>
+                <option value="om">Operation &amp; Maintenance</option>
+                <option value="civil">Civil &amp; Infrastructure</option>
+                <option value="other">Other / General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message <span class="req">*</span></label>
+              <textarea id="message" name="message" rows="5" placeholder="Describe your project or inquiry..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%;justify-content:center;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+            <div class="form-success" id="formSuccess">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Message sent successfully! We'll be in touch shortly.
+            </div>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info fade-in">
+          <h2 class="contact-form-title">Contact Information</h2>
+          <p style="margin-bottom:36px;font-size:0.9rem;">Reach us directly through any of the channels below, or visit our Riyadh office.</p>
+
+          <div class="contact-info-items">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-info-label">Office Address</div>
+                <div class="contact-info-value">MetaTech Headquarters<br />Al Olaya District, Riyadh 12212<br />Kingdom of Saudi Arabia</div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-info-label">Phone</div>
+                <div class="contact-info-value">+966 11 000 0000</div>
+                <div class="contact-info-sub">Sunday – Thursday · 8:00 AM – 5:00 PM AST</div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contact-info-label">Email</div>
+                <div class="contact-info-value">info@metatech.sa</div>
+                <div class="contact-info-sub">We respond within 1 business day</div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07"/><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77A6 6 0 0119 2.5 6 6 0 0014.7 6.3z"/></svg>
+              </div>
+              <div>
+                <div class="contact-info-label">Emergency O&amp;M</div>
+                <div class="contact-info-value">+966 11 000 0001</div>
+                <div class="contact-info-sub">24/7 fault response line</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map placeholder -->
+          <div class="map-placeholder">
+            <svg viewBox="0 0 480 280" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+              <rect width="480" height="280" fill="#071728"/>
+              <!-- Grid street pattern -->
+              <line x1="0" y1="70" x2="480" y2="70" stroke="#0d2848" stroke-width="1"/>
+              <line x1="0" y1="140" x2="480" y2="140" stroke="#0d2848" stroke-width="1"/>
+              <line x1="0" y1="210" x2="480" y2="210" stroke="#0d2848" stroke-width="1"/>
+              <line x1="80" y1="0" x2="80" y2="280" stroke="#0d2848" stroke-width="1"/>
+              <line x1="160" y1="0" x2="160" y2="280" stroke="#0d2848" stroke-width="1"/>
+              <line x1="240" y1="0" x2="240" y2="280" stroke="#0d2848" stroke-width="1"/>
+              <line x1="320" y1="0" x2="320" y2="280" stroke="#0d2848" stroke-width="1"/>
+              <line x1="400" y1="0" x2="400" y2="280" stroke="#0d2848" stroke-width="1"/>
+              <!-- Streets (highlighted roads) -->
+              <rect x="0" y="66" width="480" height="8" fill="#0a1f38"/>
+              <rect x="0" y="136" width="480" height="8" fill="#0a1f38"/>
+              <rect x="76" y="0" width="8" height="280" fill="#0a1f38"/>
+              <rect x="236" y="0" width="8" height="280" fill="#0a1f38"/>
+              <rect x="396" y="0" width="8" height="280" fill="#0a1f38"/>
+              <!-- Location pin -->
+              <circle cx="240" cy="140" r="12" fill="#3b8eff" opacity="0.9"/>
+              <circle cx="240" cy="140" r="24" stroke="#3b8eff" stroke-width="1" opacity="0.2"/>
+              <circle cx="240" cy="140" r="40" stroke="#3b8eff" stroke-width="0.5" opacity="0.1"/>
+              <line x1="240" y1="152" x2="240" y2="165" stroke="#3b8eff" stroke-width="2"/>
+              <circle cx="240" cy="168" r="2" fill="#3b8eff"/>
+              <text x="240" y="210" font-family="Inter,sans-serif" font-size="12" fill="#4a5a6d" text-anchor="middle">Al Olaya District, Riyadh</text>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+            <div class="nav-logo-text"><span class="brand">MetaTech</span><span class="tagline">Telecom Infrastructure</span></div>
+          </a>
+          <p>Leading fiber optic and telecommunications infrastructure company operating across the Kingdom of Saudi Arabia since 2005.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links">
+            <li><a href="services.html">Fiber Optic Installation</a></li>
+            <li><a href="services.html">OSP Design & Construction</a></li>
+            <li><a href="services.html">FTTH Networks</a></li>
+            <li><a href="services.html">Testing & Commissioning</a></li>
+            <li><a href="services.html">O&amp;M Services</a></li>
+            <li><a href="services.html">Civil Infrastructure</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Riyadh, Kingdom of Saudi Arabia</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>+966 11 000 0000</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@metatech.sa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2025 MetaTech Telecom Infrastructure. All rights reserved.</p>
+        <p>Riyadh, Kingdom of Saudi Arabia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>
