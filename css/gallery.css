@@ -12,13 +12,14 @@
   overflow: hidden;
   border: 1px solid var(--border-subtle);
   position: relative;
-  background: var(--navy-900);
+  background: rgba(7,23,40,0.75);
   transition: border-color var(--transition), transform var(--transition);
   cursor: pointer;
 }
 .gallery-item:hover {
-  border-color: var(--border);
+  border-color: var(--gold-border);
   transform: scale(1.01);
+  box-shadow: 0 0 0 1px var(--gold-border);
 }
 
 .gallery-item.large {

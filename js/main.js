@@ -1,13 +1,5 @@
 /* ── main.js – Shared across all pages ── */
 
-// ── Hero glass panel: trigger fade-in stagger on load ──
-window.addEventListener('DOMContentLoaded', () => {
-  const glass = document.querySelector('.hero-glass');
-  if (glass) {
-    requestAnimationFrame(() => glass.classList.add('visible'));
-  }
-});
-
 // ── Navbar scroll behaviour ──
 const navbar = document.getElementById('navbar');
 const menuBtn = document.getElementById('menuBtn');
