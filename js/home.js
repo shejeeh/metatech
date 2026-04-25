@@ -34,7 +34,7 @@ function initHeroCanvas() {
       vx: (Math.random() - 0.5) * 0.3,
       vy: (Math.random() - 0.5) * 0.3,
       r: Math.random() * 1.5 + 0.5,
-      opacity: Math.random() * 0.5 + 0.2,
+      opacity: Math.random() * 0.5 + 0.5,
     });
   }
 
@@ -58,9 +58,9 @@ function initHeroCanvas() {
         const dy = nodes[i].y - nodes[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < MAX_DIST) {
-          const alpha = (1 - dist / MAX_DIST) * 0.25;
+          const alpha = (1 - dist / MAX_DIST) * 0.55;
           ctx.strokeStyle = `rgba(59,142,255,${alpha})`;
-          ctx.lineWidth = 0.8;
+          ctx.lineWidth = 1.0;
           ctx.beginPath();
           ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(nodes[j].x, nodes[j].y);

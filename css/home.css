@@ -315,10 +315,30 @@
   .stats-inner .stat-card { border-right: none; border-bottom: 1px solid var(--border-subtle); }
   .stats-inner .stat-card:nth-child(odd) { border-right: 1px solid var(--border-subtle); }
   .why-grid { grid-template-columns: 1fr 1fr !important; }
+  .hero-title {
+    font-size: min(2.5rem, 9vw) !important;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  .hero-sub {
+    font-size: 1rem !important;
+  }
+  .cta-glow {
+    max-width: 100%;
+    width: 320px;
+  }
 }
 
 @media (max-width: 480px) {
   .why-grid { grid-template-columns: 1fr !important; }
-  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .hero-actions { 
+    flex-direction: column; 
+    align-items: stretch;
+    width: 100%;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
   .stats-inner .grid-4 { grid-template-columns: 1fr 1fr; }
 }
