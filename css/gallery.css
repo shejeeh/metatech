@@ -13,13 +13,14 @@
   border: 1px solid var(--border-subtle);
   position: relative;
   background: rgba(7,23,40,0.75);
-  transition: border-color var(--transition), transform var(--transition);
+  transition: all var(--transition);
   cursor: pointer;
+  will-change: transform, box-shadow, border-color;
 }
 .gallery-item:hover {
-  border-color: var(--gold-border);
-  transform: scale(1.01);
-  box-shadow: 0 0 0 1px var(--gold-border);
+  border-color: var(--hover-border);
+  transform: translateY(-2px) scale(var(--hover-scale-sm)) translateZ(0);
+  box-shadow: var(--hover-glow-md);
 }
 
 .gallery-item.large {
@@ -39,10 +40,10 @@
 .gallery-visual svg {
   width: 100%;
   height: 100%;
-  transition: transform 0.4s ease;
+  transition: transform var(--transition);
 }
 .gallery-item:hover .gallery-visual svg {
-  transform: scale(1.04);
+  transform: scale(var(--hover-scale-lg));
 }
 
 .gallery-overlay {

@@ -122,6 +122,14 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border-subtle);
+  transition: all var(--transition);
+  will-change: transform, box-shadow, border-color;
+  cursor: default;
+}
+.overview-image-wrap:hover {
+  border-color: var(--hover-border);
+  transform: translateY(-4px) scale(var(--hover-scale-sm)) translateZ(0);
+  box-shadow: var(--hover-glow-lg);
 }
 .overview-svg { display: block; width: 100%; height: auto; }
 
@@ -137,6 +145,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all var(--transition);
+  will-change: transform, box-shadow, border-color, background-color;
+}
+.overview-badge:hover {
+  border-color: var(--hover-border);
+  background: var(--hover-bg);
+  transform: translateY(-4px) scale(var(--hover-scale-md)) translateZ(0);
+  box-shadow: var(--hover-glow-md);
 }
 
 /* Stats */
@@ -164,6 +180,19 @@
   gap: 20px;
 }
 
+.service-card {
+  padding: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: all var(--transition);
+  will-change: transform, box-shadow, border-color, background-color;
+}
+.service-card:hover {
+  border-color: var(--hover-border);
+  background: var(--hover-bg);
+  transform: translateY(-4px) scale(var(--hover-scale-md)) translateZ(0);
+  box-shadow: var(--hover-glow-md);
+}
 .service-card h3 {
   font-size: 1.05rem;
   color: var(--white);
@@ -180,8 +209,14 @@
   font-weight: 500;
   letter-spacing: 0.02em;
   transition: all var(--transition);
+  display: inline-block;
+  will-change: transform, color, text-shadow;
 }
-.service-link:hover { color: var(--gold-light); opacity: 0.85; }
+.service-link:hover { 
+  color: var(--white);
+  transform: translateX(4px) scale(var(--hover-scale-sm)) translateZ(0);
+  text-shadow: 0 0 8px rgba(42, 127, 255, 0.5);
+}
 
 /* Why */
 .why-section {
@@ -197,11 +232,13 @@
   padding: 32px 28px;
   transition: all var(--transition);
   text-align: left;
+  will-change: transform, box-shadow, border-color, background-color;
 }
 .why-card:hover {
-  border-color: var(--gold-border);
-  background: rgba(10, 31, 56, 0.9);
-  box-shadow: 0 4px 24px rgba(198,167,94,0.08);
+  border-color: var(--hover-border);
+  background: var(--hover-bg);
+  transform: translateY(-4px) scale(var(--hover-scale-md)) translateZ(0);
+  box-shadow: var(--hover-glow-md);
 }
 .why-icon {
   width: 48px;
@@ -234,11 +271,13 @@
   border: 1px solid var(--border-subtle);
   background: rgba(7,23,40,0.75);
   transition: all var(--transition);
+  will-change: transform, box-shadow, border-color, background-color;
 }
 .project-card:hover {
-  border-color: var(--gold-border);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(0,0,0,0.4), 0 0 0 1px var(--gold-border);
+  border-color: var(--hover-border);
+  background: var(--hover-bg);
+  transform: translateY(-4px) scale(var(--hover-scale-md)) translateZ(0);
+  box-shadow: var(--hover-glow-md);
 }
 .project-image {
   position: relative;
@@ -248,10 +287,10 @@
 .project-image svg {
   width: 100%;
   height: 100%;
-  transition: transform 0.4s ease;
+  transition: transform var(--transition);
 }
 .project-card:hover .project-image svg {
-  transform: scale(1.03);
+  transform: scale(var(--hover-scale-lg));
 }
 .project-overlay {
   position: absolute;

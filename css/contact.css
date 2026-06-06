@@ -96,9 +96,15 @@
   background: rgba(7,23,40,0.75);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  transition: border-color var(--transition);
+  transition: all var(--transition);
+  will-change: transform, box-shadow, border-color, background-color;
 }
-.contact-info-item:hover { border-color: var(--gold-border); }
+.contact-info-item:hover { 
+  border-color: var(--hover-border);
+  background: var(--hover-bg);
+  transform: translateY(-2px) scale(var(--hover-scale-sm)) translateZ(0);
+  box-shadow: var(--hover-glow-md);
+}
 
 .contact-info-icon {
   width: 40px;
