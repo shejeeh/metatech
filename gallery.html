@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery — MetaTech Telecom Infrastructure</title>
-  <meta name="description" content="Gallery of MetaTech fiber optic and telecommunications infrastructure projects across Saudi Arabia." />
+  <meta name="description" content="Photo gallery of MetaTech fiber optic and telecom infrastructure projects across Saudi Arabia — aerial, civil, FTTH, HDD, splicing and more." />
   <link rel="icon" type="image/jpeg" href="logo.jpeg" />
   <link rel="stylesheet" href="css/style.css?v=3" />
-  <link rel="stylesheet" href="css/gallery.css" />
+  <link rel="stylesheet" href="css/gallery.css?v=2" />
 </head>
 <body>
 
@@ -40,253 +40,171 @@
     </div>
   </header>
 
-  <!-- Gallery Grid -->
+  <!-- Folder Grid -->
   <section class="section-gap">
     <div class="container">
-      <div class="gallery-grid">
+      <div class="gallery-folders" id="galleryFolders">
 
-        <!-- Each gallery item uses an SVG illustration representing the work type -->
-        <div class="gallery-item fade-in large">
-          <div class="gallery-visual">
-            <svg viewBox="0 0 700 460" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-              <rect width="700" height="460" fill="#071728"/>
-              <line x1="0" y1="92" x2="700" y2="92" stroke="#0d2848" stroke-width="1"/>
-              <line x1="0" y1="184" x2="700" y2="184" stroke="#0d2848" stroke-width="1"/>
-              <line x1="0" y1="276" x2="700" y2="276" stroke="#0d2848" stroke-width="1"/>
-              <line x1="0" y1="368" x2="700" y2="368" stroke="#0d2848" stroke-width="1"/>
-              <line x1="140" y1="0" x2="140" y2="460" stroke="#0d2848" stroke-width="1"/>
-              <line x1="280" y1="0" x2="280" y2="460" stroke="#0d2848" stroke-width="1"/>
-              <line x1="420" y1="0" x2="420" y2="460" stroke="#0d2848" stroke-width="1"/>
-              <line x1="560" y1="0" x2="560" y2="460" stroke="#0d2848" stroke-width="1"/>
-              <path d="M50 380 Q200 280 350 200 Q480 130 650 60" stroke="#3b8eff" stroke-width="3" opacity="0.7"/>
-              <path d="M50 400 Q200 310 350 230 Q480 155 650 85" stroke="#4d9fff" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.3"/>
-              <circle cx="50" cy="380" r="8" fill="#3b8eff"/>
-              <circle cx="200" cy="280" r="6" fill="#3b8eff" opacity="0.8"/>
-              <circle cx="350" cy="200" r="10" fill="#3b8eff"/>
-              <circle cx="480" cy="135" r="6" fill="#3b8eff" opacity="0.8"/>
-              <circle cx="650" cy="60" r="8" fill="#3b8eff"/>
-              <circle cx="350" cy="200" r="28" stroke="#3b8eff" stroke-width="1" opacity="0.15"/>
-              <circle cx="350" cy="200" r="48" stroke="#3b8eff" stroke-width="0.5" opacity="0.07"/>
+        <!-- AERIAL POLE -->
+        <div class="folder-card fade-in" id="folder-0" onclick="openFolder(0)">
+          <div class="folder-cover">
+            <img src="PROJECT IMAGES/AERIAL POLE/COVER PICTURE.png" alt="Aerial Pole" loading="lazy" />
+            <div class="folder-cover-overlay"></div>
+          </div>
+          <div class="folder-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18l6-6-6-6"/>
             </svg>
-            <div class="gallery-overlay">
-              <span class="gallery-label">Fiber Backbone Routing</span>
-            </div>
+          </div>
+          <div class="folder-info">
+            <span class="folder-name">Aerial Pole</span>
+            <span class="folder-count">6 Photos</span>
           </div>
         </div>
 
-        <div class="gallery-item fade-in">
-          <div class="gallery-visual">
-            <svg viewBox="0 0 440 300" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-              <rect width="440" height="300" fill="#071728"/>
-              <line x1="0" y1="60" x2="440" y2="60" stroke="#0d2848" stroke-width="1"/>
-              <line x1="0" y1="120" x2="440" y2="120" stroke="#0d2848" stroke-width="1"/>
-              <line x1="0" y1="180" x2="440" y2="180" stroke="#0d2848" stroke-width="1"/>
-              <line x1="0" y1="240" x2="440" y2="240" stroke="#0d2848" stroke-width="1"/>
-              <!-- Splice closure diagram -->
-              <rect x="140" y="100" width="160" height="100" rx="50" fill="#0a1f38" stroke="#3b8eff" stroke-opacity="0.4"/>
-              <rect x="155" y="115" width="130" height="70" rx="35" fill="#071728" stroke="#164068"/>
-              <!-- Fiber lines entering splice -->
-              <path d="M20 150 Q100 150 140 150" stroke="#3b8eff" stroke-width="2" opacity="0.6"/>
-              <path d="M20 130 Q100 140 140 140" stroke="#4d9fff" stroke-width="1.5" opacity="0.4"/>
-              <path d="M20 170 Q100 160 140 160" stroke="#2a7fff" stroke-width="1.5" opacity="0.4"/>
-              <path d="M300 150 Q370 150 420 150" stroke="#3b8eff" stroke-width="2" opacity="0.6"/>
-              <path d="M300 140 Q370 140 420 130" stroke="#4d9fff" stroke-width="1.5" opacity="0.4"/>
-              <path d="M300 160 Q370 160 420 170" stroke="#2a7fff" stroke-width="1.5" opacity="0.4"/>
-              <circle cx="220" cy="150" r="4" fill="#3b8eff"/>
+        <!-- CABLE PULLING -->
+        <div class="folder-card fade-in" id="folder-1" onclick="openFolder(1)">
+          <div class="folder-cover">
+            <img src="PROJECT IMAGES/CABLE PULLING/COVER PICTURE.png" alt="Cable Pulling" loading="lazy" />
+            <div class="folder-cover-overlay"></div>
+          </div>
+          <div class="folder-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18l6-6-6-6"/>
             </svg>
-            <div class="gallery-overlay">
-              <span class="gallery-label">Splice Closure Installation</span>
-            </div>
+          </div>
+          <div class="folder-info">
+            <span class="folder-name">Cable Pulling</span>
+            <span class="folder-count">6 Photos</span>
           </div>
         </div>
 
-        <div class="gallery-item fade-in">
-          <div class="gallery-visual">
-            <svg viewBox="0 0 440 300" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-              <rect width="440" height="300" fill="#071728"/>
-              <line x1="0" y1="60" x2="440" y2="60" stroke="#0d2848" stroke-width="1"/>
-              <line x1="0" y1="120" x2="440" y2="120" stroke="#0d2848" stroke-width="1"/>
-              <line x1="0" y1="180" x2="440" y2="180" stroke="#0d2848" stroke-width="1"/>
-              <line x1="0" y1="240" x2="440" y2="240" stroke="#0d2848" stroke-width="1"/>
-              <!-- OTDR trace -->
-              <rect x="40" y="60" width="360" height="180" rx="6" fill="#0a1f38" stroke="#113358"/>
-              <text x="60" y="88" font-family="Inter,sans-serif" font-size="10" fill="#5a7080">dB</text>
-              <text x="360" y="228" font-family="Inter,sans-serif" font-size="10" fill="#5a7080">km</text>
-              <!-- OTDR curve -->
-              <path d="M60 100 L100 102 L140 105 L180 108 L210 120 L215 112 L220 115 L270 120 L310 124 L340 200 L360 220" stroke="#3b8eff" stroke-width="2" fill="none"/>
-              <!-- Events -->
-              <circle cx="210" cy="120" r="4" fill="#4d9fff"/>
-              <circle cx="340" cy="200" r="4" fill="#4d9fff"/>
-              <line x1="210" y1="90" x2="210" y2="140" stroke="#4d9fff" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+        <!-- CIVIL-CITY WORK -->
+        <div class="folder-card fade-in" id="folder-2" onclick="openFolder(2)">
+          <div class="folder-cover">
+            <img src="PROJECT IMAGES/CIVIL-CITY WORK/COVER PICTURE.png" alt="Civil City Work" loading="lazy" />
+            <div class="folder-cover-overlay"></div>
+          </div>
+          <div class="folder-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18l6-6-6-6"/>
             </svg>
-            <div class="gallery-overlay">
-              <span class="gallery-label">OTDR Trace Analysis</span>
-            </div>
+          </div>
+          <div class="folder-info">
+            <span class="folder-name">Civil – City Work</span>
+            <span class="folder-count">15 Photos</span>
           </div>
         </div>
 
-        <div class="gallery-item fade-in">
-          <div class="gallery-visual">
-            <svg viewBox="0 0 440 300" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-              <rect width="440" height="300" fill="#071728"/>
-              <!-- Aerial installation -->
-              <line x1="60" y1="180" x2="60" y2="280" stroke="#164068" stroke-width="5"/>
-              <line x1="60" y1="180" x2="48" y2="196" stroke="#164068" stroke-width="2.5"/>
-              <line x1="60" y1="180" x2="72" y2="196" stroke="#164068" stroke-width="2.5"/>
-              <line x1="180" y1="150" x2="180" y2="280" stroke="#164068" stroke-width="5"/>
-              <line x1="180" y1="150" x2="168" y2="166" stroke="#164068" stroke-width="2.5"/>
-              <line x1="180" y1="150" x2="192" y2="166" stroke="#164068" stroke-width="2.5"/>
-              <line x1="300" y1="160" x2="300" y2="280" stroke="#164068" stroke-width="5"/>
-              <line x1="300" y1="160" x2="288" y2="176" stroke="#164068" stroke-width="2.5"/>
-              <line x1="300" y1="160" x2="312" y2="176" stroke="#164068" stroke-width="2.5"/>
-              <line x1="400" y1="140" x2="400" y2="280" stroke="#164068" stroke-width="5"/>
-              <line x1="400" y1="140" x2="388" y2="156" stroke="#164068" stroke-width="2.5"/>
-              <line x1="400" y1="140" x2="412" y2="156" stroke="#164068" stroke-width="2.5"/>
-              <!-- Cables -->
-              <path d="M60 180 Q120 168 180 150 Q240 155 300 160 Q350 150 400 140" stroke="#3b8eff" stroke-width="2.5" opacity="0.8"/>
-              <path d="M60 183 Q120 171 180 153 Q240 158 300 163 Q350 153 400 143" stroke="#4d9fff" stroke-width="1" opacity="0.4" stroke-dasharray="4 4"/>
-              <circle cx="60" cy="180" r="4" fill="#3b8eff"/>
-              <circle cx="180" cy="150" r="4" fill="#3b8eff"/>
-              <circle cx="300" cy="160" r="4" fill="#3b8eff"/>
-              <circle cx="400" cy="140" r="4" fill="#3b8eff"/>
+        <!-- CIVIL-OSP -->
+        <div class="folder-card fade-in" id="folder-3" onclick="openFolder(3)">
+          <div class="folder-cover">
+            <img src="PROJECT IMAGES/CIVIL-OSP/COVER PICTURE.png" alt="Civil OSP" loading="lazy" />
+            <div class="folder-cover-overlay"></div>
+          </div>
+          <div class="folder-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18l6-6-6-6"/>
             </svg>
-            <div class="gallery-overlay">
-              <span class="gallery-label">Aerial Cable Lashing</span>
-            </div>
+          </div>
+          <div class="folder-info">
+            <span class="folder-name">Civil – OSP</span>
+            <span class="folder-count">20 Photos</span>
           </div>
         </div>
 
-        <div class="gallery-item fade-in">
-          <div class="gallery-visual">
-            <svg viewBox="0 0 440 300" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-              <rect width="440" height="300" fill="#071728"/>
-              <!-- ODF panel front view -->
-              <rect x="60" y="50" width="320" height="200" rx="6" fill="#0a1f38" stroke="#164068" stroke-width="2"/>
-              <rect x="75" y="65" width="290" height="170" rx="4" fill="#071728" stroke="#113358"/>
-              <!-- Port rows -->
-              <rect x="90" y="80" width="260" height="32" rx="3" fill="#0a1f38" stroke="#113358"/>
-              <rect x="90" y="122" width="260" height="32" rx="3" fill="#0a1f38" stroke="#113358"/>
-              <rect x="90" y="164" width="260" height="32" rx="3" fill="#0a1f38" stroke="#113358"/>
-              <!-- Ports -->
-              <circle cx="110" cy="96" r="7" fill="#071728" stroke="#3b8eff" stroke-opacity="0.5"/>
-              <circle cx="135" cy="96" r="7" fill="#071728" stroke="#3b8eff" stroke-opacity="0.5"/>
-              <circle cx="160" cy="96" r="7" fill="#071728" stroke="#4d9fff" stroke-opacity="0.6"/>
-              <circle cx="185" cy="96" r="7" fill="#071728" stroke="#3b8eff" stroke-opacity="0.5"/>
-              <circle cx="210" cy="96" r="7" fill="#3b8eff" opacity="0.7"/>
-              <circle cx="235" cy="96" r="7" fill="#071728" stroke="#3b8eff" stroke-opacity="0.5"/>
-              <circle cx="260" cy="96" r="7" fill="#071728" stroke="#3b8eff" stroke-opacity="0.5"/>
-              <circle cx="285" cy="96" r="7" fill="#4d9fff" opacity="0.6"/>
-              <circle cx="310" cy="96" r="7" fill="#071728" stroke="#3b8eff" stroke-opacity="0.5"/>
-              <circle cx="335" cy="96" r="7" fill="#071728" stroke="#3b8eff" stroke-opacity="0.5"/>
-              <!-- Row 2 -->
-              <circle cx="110" cy="138" r="7" fill="#3b8eff" opacity="0.7"/>
-              <circle cx="135" cy="138" r="7" fill="#071728" stroke="#3b8eff" stroke-opacity="0.5"/>
-              <circle cx="160" cy="138" r="7" fill="#071728" stroke="#3b8eff" stroke-opacity="0.5"/>
-              <circle cx="185" cy="138" r="7" fill="#4d9fff" opacity="0.6"/>
-              <circle cx="210" cy="138" r="7" fill="#071728" stroke="#3b8eff" stroke-opacity="0.5"/>
-              <circle cx="235" cy="138" r="7" fill="#071728" stroke="#3b8eff" stroke-opacity="0.5"/>
-              <circle cx="260" cy="138" r="7" fill="#3b8eff" opacity="0.7"/>
-              <circle cx="285" cy="138" r="7" fill="#071728" stroke="#3b8eff" stroke-opacity="0.5"/>
-              <circle cx="310" cy="138" r="7" fill="#071728" stroke="#3b8eff" stroke-opacity="0.5"/>
-              <circle cx="335" cy="138" r="7" fill="#071728" stroke="#3b8eff" stroke-opacity="0.5"/>
+        <!-- FTTH IMPLEMENTATION -->
+        <div class="folder-card fade-in" id="folder-4" onclick="openFolder(4)">
+          <div class="folder-cover">
+            <img src="PROJECT IMAGES/FTTH IMPLEMENTATION/COVER PICTURE.png" alt="FTTH Implementation" loading="lazy" />
+            <div class="folder-cover-overlay"></div>
+          </div>
+          <div class="folder-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18l6-6-6-6"/>
             </svg>
-            <div class="gallery-overlay">
-              <span class="gallery-label">ODF Patch Panel Termination</span>
-            </div>
+          </div>
+          <div class="folder-info">
+            <span class="folder-name">FTTH Implementation</span>
+            <span class="folder-count">9 Photos</span>
           </div>
         </div>
 
-        <div class="gallery-item fade-in wide">
-          <div class="gallery-visual">
-            <svg viewBox="0 0 700 300" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-              <rect width="700" height="300" fill="#071728"/>
-              <line x1="0" y1="60" x2="700" y2="60" stroke="#0d2848" stroke-width="1"/>
-              <line x1="0" y1="120" x2="700" y2="120" stroke="#0d2848" stroke-width="1"/>
-              <line x1="0" y1="180" x2="700" y2="180" stroke="#0d2848" stroke-width="1"/>
-              <line x1="0" y1="240" x2="700" y2="240" stroke="#0d2848" stroke-width="1"/>
-              <!-- Duct cross section series -->
-              <rect x="50" y="160" width="600" height="60" rx="4" fill="#0a1f38" stroke="#164068"/>
-              <!-- Conduits -->
-              <circle cx="100" cy="190" r="20" fill="#071728" stroke="#3b8eff" stroke-opacity="0.4"/>
-              <circle cx="160" cy="190" r="20" fill="#071728" stroke="#3b8eff" stroke-opacity="0.4"/>
-              <circle cx="220" cy="190" r="20" fill="#071728" stroke="#4d9fff" stroke-opacity="0.5"/>
-              <circle cx="280" cy="190" r="20" fill="#3b8eff" opacity="0.15" stroke="#3b8eff" stroke-opacity="0.5"/>
-              <circle cx="340" cy="190" r="20" fill="#071728" stroke="#3b8eff" stroke-opacity="0.4"/>
-              <circle cx="400" cy="190" r="20" fill="#071728" stroke="#3b8eff" stroke-opacity="0.4"/>
-              <circle cx="460" cy="190" r="20" fill="#4d9fff" opacity="0.12" stroke="#4d9fff" stroke-opacity="0.5"/>
-              <circle cx="520" cy="190" r="20" fill="#071728" stroke="#3b8eff" stroke-opacity="0.4"/>
-              <circle cx="580" cy="190" r="20" fill="#071728" stroke="#3b8eff" stroke-opacity="0.4"/>
-              <circle cx="640" cy="190" r="20" fill="#071728" stroke="#3b8eff" stroke-opacity="0.4"/>
-              <!-- Ground surface -->
-              <line x1="30" y1="155" x2="670" y2="155" stroke="#164068" stroke-width="4"/>
-              <rect x="30" y="140" width="640" height="15" fill="#0d2848" rx="2"/>
-              <text x="350" y="280" font-family="Inter,sans-serif" font-size="12" fill="#4a5a6d" text-anchor="middle">Underground Duct Bank Installation — 5-Way Conduit System</text>
+        <!-- HDD -->
+        <div class="folder-card fade-in" id="folder-5" onclick="openFolder(5)">
+          <div class="folder-cover">
+            <img src="PROJECT IMAGES/HDD/COVER PICTURE.png" alt="HDD" loading="lazy" />
+            <div class="folder-cover-overlay"></div>
+          </div>
+          <div class="folder-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18l6-6-6-6"/>
             </svg>
-            <div class="gallery-overlay">
-              <span class="gallery-label">Underground Duct Bank System</span>
-            </div>
+          </div>
+          <div class="folder-info">
+            <span class="folder-name">HDD</span>
+            <span class="folder-count">5 Photos</span>
           </div>
         </div>
 
-        <div class="gallery-item fade-in">
-          <div class="gallery-visual">
-            <svg viewBox="0 0 440 300" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-              <rect width="440" height="300" fill="#071728"/>
-              <!-- Manhole plan view -->
-              <rect x="100" y="60" width="240" height="180" rx="8" fill="#0a1f38" stroke="#164068" stroke-width="2"/>
-              <rect x="130" y="90" width="180" height="120" rx="4" fill="#071728" stroke="#113358"/>
-              <!-- Cable pathways -->
-              <line x1="0" y1="150" x2="130" y2="150" stroke="#3b8eff" stroke-width="2" opacity="0.5"/>
-              <line x1="310" y1="150" x2="440" y2="150" stroke="#3b8eff" stroke-width="2" opacity="0.5"/>
-              <line x1="220" y1="60" x2="220" y2="90" stroke="#3b8eff" stroke-width="2" opacity="0.5"/>
-              <line x1="220" y1="210" x2="220" y2="240" stroke="#3b8eff" stroke-width="2" opacity="0.5"/>
-              <line x1="220" y1="240" x2="220" y2="300" stroke="#3b8eff" stroke-width="2" opacity="0.5"/>
-              <!-- Splice tray in centre -->
-              <rect x="175" y="125" width="90" height="50" rx="4" fill="#0a1f38" stroke="#3b8eff" stroke-opacity="0.4"/>
-              <circle cx="220" cy="150" r="12" fill="#071728" stroke="#3b8eff" stroke-opacity="0.5"/>
-              <circle cx="220" cy="150" r="4" fill="#3b8eff" opacity="0.8"/>
-            </svg>
-            <div class="gallery-overlay">
-              <span class="gallery-label">Manhole Cable Management</span>
-            </div>
+        <!-- SPLICING & TESTING -->
+        <div class="folder-card fade-in" id="folder-6" onclick="openFolder(6)">
+          <div class="folder-cover">
+            <img src="PROJECT IMAGES/SPLICING &amp; TESTING/COVER PICTURE.png" alt="Splicing & Testing" loading="lazy" />
+            <div class="folder-cover-overlay"></div>
           </div>
-        </div>
-
-        <div class="gallery-item fade-in">
-          <div class="gallery-visual">
-            <svg viewBox="0 0 440 300" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-              <rect width="440" height="300" fill="#071728"/>
-              <!-- Network map with KSA-like layout -->
-              <line x1="0" y1="60" x2="440" y2="60" stroke="#0d2848" stroke-width="1"/>
-              <line x1="0" y1="120" x2="440" y2="120" stroke="#0d2848" stroke-width="1"/>
-              <line x1="0" y1="180" x2="440" y2="180" stroke="#0d2848" stroke-width="1"/>
-              <line x1="0" y1="240" x2="440" y2="240" stroke="#0d2848" stroke-width="1"/>
-              <!-- City nodes -->
-              <circle cx="220" cy="150" r="8" fill="#3b8eff"/><!-- Riyadh -->
-              <circle cx="100" cy="130" r="6" fill="#4d9fff" opacity="0.8"/><!-- Jeddah-ish -->
-              <circle cx="330" cy="100" r="6" fill="#4d9fff" opacity="0.8"/><!-- Dammam-ish -->
-              <circle cx="140" cy="200" r="5" fill="#4d9fff" opacity="0.7"/>
-              <circle cx="300" cy="200" r="5" fill="#4d9fff" opacity="0.7"/>
-              <circle cx="200" cy="70" r="5" fill="#4d9fff" opacity="0.7"/>
-              <!-- Connections -->
-              <line x1="220" y1="150" x2="100" y2="130" stroke="#3b8eff" stroke-width="1.5" opacity="0.5"/>
-              <line x1="220" y1="150" x2="330" y2="100" stroke="#3b8eff" stroke-width="1.5" opacity="0.5"/>
-              <line x1="220" y1="150" x2="140" y2="200" stroke="#3b8eff" stroke-width="1.5" opacity="0.5"/>
-              <line x1="220" y1="150" x2="300" y2="200" stroke="#3b8eff" stroke-width="1.5" opacity="0.5"/>
-              <line x1="220" y1="150" x2="200" y2="70" stroke="#3b8eff" stroke-width="1.5" opacity="0.5"/>
-              <line x1="100" y1="130" x2="140" y2="200" stroke="#3b8eff" stroke-width="1" opacity="0.3"/>
-              <line x1="330" y1="100" x2="300" y2="200" stroke="#3b8eff" stroke-width="1" opacity="0.3"/>
-              <circle cx="220" cy="150" r="20" stroke="#3b8eff" stroke-width="1" opacity="0.15"/>
+          <div class="folder-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18l6-6-6-6"/>
             </svg>
-            <div class="gallery-overlay">
-              <span class="gallery-label">KSA Network Coverage Map</span>
-            </div>
+          </div>
+          <div class="folder-info">
+            <span class="folder-name">Splicing &amp; Testing</span>
+            <span class="folder-count">9 Photos</span>
           </div>
         </div>
 
       </div>
     </div>
   </section>
+
+  <!-- Lightbox Overlay -->
+  <div id="glb-overlay" role="dialog" aria-modal="true" aria-label="Image Viewer">
+    <div class="glb-header">
+      <button class="glb-back-btn" id="glbBackBtn" onclick="closeFolder()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 5l-7 7 7 7"/>
+        </svg>
+        Back to Gallery
+      </button>
+      <span class="glb-folder-title" id="glbTitle"></span>
+      <span class="glb-image-count" id="glbCount"></span>
+    </div>
+
+    <div class="glb-main">
+      <!-- Prev arrow -->
+      <button class="glb-nav glb-prev" id="glbPrev" onclick="navigate(-1)" aria-label="Previous image">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+
+      <!-- Main image -->
+      <div class="glb-img-wrap">
+        <img id="glbMainImg" src="" alt="" />
+      </div>
+
+      <!-- Next arrow -->
+      <button class="glb-nav glb-next" id="glbNext" onclick="navigate(1)" aria-label="Next image">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Thumbnail strip -->
+    <div class="glb-strip" id="glbStrip"></div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -314,11 +232,11 @@
           <div class="footer-col-title">Services</div>
           <ul class="footer-links">
             <li><a href="services.html">Fiber Optic Installation</a></li>
-            <li><a href="services.html">OSP Design & Construction</a></li>
+            <li><a href="services.html">OSP Design &amp; Construction</a></li>
             <li><a href="services.html">FTTH Networks</a></li>
-            <li><a href="services.html">Testing & Commissioning</a></li>
+            <li><a href="services.html">Testing &amp; Commissioning</a></li>
             <li><a href="services.html">O&amp;M Services</a></li>
-            <li><a href="services.html">Civil Infrastructure</a></li>
+            <li><a href="services.html#equipment">Heavy Equipment &amp; Engineering</a></li>
           </ul>
         </div>
         <div>
@@ -341,12 +259,214 @@
     <div class="divider"></div>
     <div class="container">
       <div class="footer-bottom">
-        <p>© 2025 MetaTech Telecom Infrastructure. All rights reserved.</p>
+        <p>&copy; 2025 MetaTech Telecom Infrastructure. All rights reserved.</p>
         <p>Riyadh, Kingdom of Saudi Arabia</p>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+
+  <script>
+    // ── Folder data ──────────────────────────────────────────────────────────
+    const folders = [
+      {
+        name: 'Aerial Pole',
+        images: [
+          'PROJECT IMAGES/AERIAL POLE/1.png',
+          'PROJECT IMAGES/AERIAL POLE/2.png',
+          'PROJECT IMAGES/AERIAL POLE/3.png',
+          'PROJECT IMAGES/AERIAL POLE/4.png',
+          'PROJECT IMAGES/AERIAL POLE/5.png',
+          'PROJECT IMAGES/AERIAL POLE/6.png'
+        ]
+      },
+      {
+        name: 'Cable Pulling',
+        images: [
+          'PROJECT IMAGES/CABLE PULLING/B1.png',
+          'PROJECT IMAGES/CABLE PULLING/B2.png',
+          'PROJECT IMAGES/CABLE PULLING/B3.png',
+          'PROJECT IMAGES/CABLE PULLING/B4.png',
+          'PROJECT IMAGES/CABLE PULLING/B5.png',
+          'PROJECT IMAGES/CABLE PULLING/B6.png'
+        ]
+      },
+      {
+        name: 'Civil – City Work',
+        images: [
+          'PROJECT IMAGES/CIVIL-CITY WORK/1.png',
+          'PROJECT IMAGES/CIVIL-CITY WORK/2.png',
+          'PROJECT IMAGES/CIVIL-CITY WORK/3.png',
+          'PROJECT IMAGES/CIVIL-CITY WORK/5.png',
+          'PROJECT IMAGES/CIVIL-CITY WORK/6.png',
+          'PROJECT IMAGES/CIVIL-CITY WORK/7.png',
+          'PROJECT IMAGES/CIVIL-CITY WORK/8.png',
+          'PROJECT IMAGES/CIVIL-CITY WORK/9.png',
+          'PROJECT IMAGES/CIVIL-CITY WORK/10.png',
+          'PROJECT IMAGES/CIVIL-CITY WORK/11.png',
+          'PROJECT IMAGES/CIVIL-CITY WORK/12.png',
+          'PROJECT IMAGES/CIVIL-CITY WORK/13.png',
+          'PROJECT IMAGES/CIVIL-CITY WORK/14.png',
+          'PROJECT IMAGES/CIVIL-CITY WORK/15.png',
+          'PROJECT IMAGES/CIVIL-CITY WORK/16.png'
+        ]
+      },
+      {
+        name: 'Civil – OSP',
+        images: [
+          'PROJECT IMAGES/CIVIL-OSP/1.png',
+          'PROJECT IMAGES/CIVIL-OSP/2.png',
+          'PROJECT IMAGES/CIVIL-OSP/3.png',
+          'PROJECT IMAGES/CIVIL-OSP/4.png',
+          'PROJECT IMAGES/CIVIL-OSP/5.png',
+          'PROJECT IMAGES/CIVIL-OSP/6.png',
+          'PROJECT IMAGES/CIVIL-OSP/7.png',
+          'PROJECT IMAGES/CIVIL-OSP/8.png',
+          'PROJECT IMAGES/CIVIL-OSP/9.png',
+          'PROJECT IMAGES/CIVIL-OSP/10.png',
+          'PROJECT IMAGES/CIVIL-OSP/12.png',
+          'PROJECT IMAGES/CIVIL-OSP/13.png',
+          'PROJECT IMAGES/CIVIL-OSP/14.png',
+          'PROJECT IMAGES/CIVIL-OSP/15.png',
+          'PROJECT IMAGES/CIVIL-OSP/16.png',
+          'PROJECT IMAGES/CIVIL-OSP/17.png',
+          'PROJECT IMAGES/CIVIL-OSP/18.png',
+          'PROJECT IMAGES/CIVIL-OSP/19.png',
+          'PROJECT IMAGES/CIVIL-OSP/20.png',
+          'PROJECT IMAGES/CIVIL-OSP/21.png'
+        ]
+      },
+      {
+        name: 'FTTH Implementation',
+        images: [
+          'PROJECT IMAGES/FTTH IMPLEMENTATION/1.png',
+          'PROJECT IMAGES/FTTH IMPLEMENTATION/2.png',
+          'PROJECT IMAGES/FTTH IMPLEMENTATION/4.png',
+          'PROJECT IMAGES/FTTH IMPLEMENTATION/5.png',
+          'PROJECT IMAGES/FTTH IMPLEMENTATION/6.png',
+          'PROJECT IMAGES/FTTH IMPLEMENTATION/7.png',
+          'PROJECT IMAGES/FTTH IMPLEMENTATION/8.png',
+          'PROJECT IMAGES/FTTH IMPLEMENTATION/9.png',
+          'PROJECT IMAGES/FTTH IMPLEMENTATION/10.png'
+        ]
+      },
+      {
+        name: 'HDD',
+        images: [
+          'PROJECT IMAGES/HDD/H1.png',
+          'PROJECT IMAGES/HDD/H2.png',
+          'PROJECT IMAGES/HDD/H3.png',
+          'PROJECT IMAGES/HDD/H5.png',
+          'PROJECT IMAGES/HDD/H6.png'
+        ]
+      },
+      {
+        name: 'Splicing & Testing',
+        images: [
+          'PROJECT IMAGES/SPLICING & TESTING/1.png',
+          'PROJECT IMAGES/SPLICING & TESTING/2.png',
+          'PROJECT IMAGES/SPLICING & TESTING/3.png',
+          'PROJECT IMAGES/SPLICING & TESTING/5.png',
+          'PROJECT IMAGES/SPLICING & TESTING/6.png',
+          'PROJECT IMAGES/SPLICING & TESTING/7.png',
+          'PROJECT IMAGES/SPLICING & TESTING/8.png',
+          'PROJECT IMAGES/SPLICING & TESTING/9.png',
+          'PROJECT IMAGES/SPLICING & TESTING/10.png'
+        ]
+      }
+    ];
+
+    // ── State ────────────────────────────────────────────────────────────────
+    let currentFolder = null;
+    let currentIndex  = 0;
+
+    const overlay   = document.getElementById('glb-overlay');
+    const mainImg   = document.getElementById('glbMainImg');
+    const glbTitle  = document.getElementById('glbTitle');
+    const glbCount  = document.getElementById('glbCount');
+    const glbStrip  = document.getElementById('glbStrip');
+    const glbPrev   = document.getElementById('glbPrev');
+    const glbNext   = document.getElementById('glbNext');
+
+    // ── Open folder ──────────────────────────────────────────────────────────
+    function openFolder(index) {
+      currentFolder = folders[index];
+      currentIndex  = 0;
+
+      // Header
+      glbTitle.textContent = currentFolder.name;
+
+      // Build thumbnails
+      glbStrip.innerHTML = '';
+      currentFolder.images.forEach((src, i) => {
+        const thumb = document.createElement('div');
+        thumb.className = 'glb-thumb' + (i === 0 ? ' active' : '');
+        thumb.innerHTML = `<img src="${src}" alt="Photo ${i + 1}" loading="lazy" />`;
+        thumb.addEventListener('click', () => goTo(i));
+        glbStrip.appendChild(thumb);
+      });
+
+      renderImage();
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // ── Close folder ─────────────────────────────────────────────────────────
+    function closeFolder() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        mainImg.src = '';
+        glbStrip.innerHTML = '';
+      }, 300);
+    }
+
+    // ── Navigate ─────────────────────────────────────────────────────────────
+    function navigate(dir) {
+      const total = currentFolder.images.length;
+      goTo((currentIndex + dir + total) % total);
+    }
+
+    function goTo(index) {
+      currentIndex = index;
+      renderImage();
+
+      // Update thumbnail active state
+      const thumbs = glbStrip.querySelectorAll('.glb-thumb');
+      thumbs.forEach((t, i) => t.classList.toggle('active', i === index));
+
+      // Scroll active thumb into view
+      if (thumbs[index]) {
+        thumbs[index].scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+      }
+    }
+
+    function renderImage() {
+      const src = currentFolder.images[currentIndex];
+      mainImg.style.opacity = '0';
+      mainImg.src = src;
+      mainImg.alt = `${currentFolder.name} – Photo ${currentIndex + 1}`;
+      mainImg.onload = () => { mainImg.style.opacity = '1'; };
+      glbCount.textContent = `${currentIndex + 1} / ${currentFolder.images.length}`;
+
+      glbPrev.style.display = currentFolder.images.length > 1 ? '' : 'none';
+      glbNext.style.display = currentFolder.images.length > 1 ? '' : 'none';
+    }
+
+    // ── Keyboard navigation ──────────────────────────────────────────────────
+    document.addEventListener('keydown', (e) => {
+      if (!overlay.classList.contains('open')) return;
+      if (e.key === 'ArrowRight') navigate(1);
+      if (e.key === 'ArrowLeft')  navigate(-1);
+      if (e.key === 'Escape')     closeFolder();
+    });
+
+    // ── Click outside image to close ─────────────────────────────────────────
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeFolder();
+    });
+  </script>
+
 </body>
 </html>
