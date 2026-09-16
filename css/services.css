@@ -199,3 +199,273 @@
     max-height: 320px;
   }
 }
+
+/* ============================================================
+   MAC MACHINERIES — Cinematic Image Gallery
+   ============================================================ */
+
+.mac-gallery-section {
+  padding: 80px 0 100px;
+  background: linear-gradient(180deg, rgba(2,11,24,0.6) 0%, rgba(7,23,40,0.55) 50%, rgba(2,11,24,0.6) 100%);
+  overflow: hidden;
+}
+
+.mac-gallery-header {
+  margin-bottom: 48px;
+}
+
+.mac-gallery-header .section-label {
+  margin-bottom: 14px;
+}
+
+.mac-gallery-header .section-title {
+  margin-bottom: 12px;
+}
+
+.mac-gallery-header p {
+  font-size: 0.97rem;
+  color: var(--text-secondary);
+  max-width: 520px;
+}
+
+/* ── Grid wrapper: 3 rows stacked ── */
+.mac-gallery-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;            /* expanded spacing between rows */
+  width: 100%;
+}
+
+/* ── Each row is a flex container ── */
+.mac-gallery-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  height: 350px;        /* increased row height for larger, more cinematic images */
+}
+
+/* ── Each card: equal flex-grow by default ── */
+.mac-gallery-card {
+  position: relative;
+  flex: 1 1 0;           /* equal share */
+  min-width: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  background: var(--navy-900);
+  transition:
+    flex 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.45s ease;
+  will-change: flex;
+}
+
+/* Expanded card in a hovered row */
+.mac-gallery-row:hover .mac-gallery-card {
+  flex: 0.55 1 0;        /* shrink non-hovered cards */
+  border-color: rgba(255,255,255,0.06);
+}
+
+.mac-gallery-row:hover .mac-gallery-card:hover {
+  flex: 2.5 1 0;         /* expand hovered card */
+  border-color: var(--gold-border);
+}
+
+/* ── Image ── */
+.mac-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mac-gallery-card:hover .mac-gallery-img {
+  transform: scale(1.06);
+}
+
+/* ── Cinematic overlay ── */
+.mac-gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(2, 11, 24, 0.55) 0%,
+    rgba(7, 23, 40, 0.35) 50%,
+    rgba(2, 11, 24, 0.72) 100%
+  );
+  transition: opacity 0.45s ease;
+}
+
+.mac-gallery-card:hover .mac-gallery-overlay {
+  opacity: 0.4;          /* lighter on hover = image more visible */
+}
+
+/* Darken non-hovered siblings */
+.mac-gallery-row:hover .mac-gallery-card:not(:hover) .mac-gallery-overlay {
+  opacity: 1.0;
+  background: linear-gradient(
+    160deg,
+    rgba(2, 11, 24, 0.72) 0%,
+    rgba(7, 23, 40, 0.58) 50%,
+    rgba(2, 11, 24, 0.82) 100%
+  );
+}
+
+/* ── Card number (top-left) ── */
+.mac-gallery-num {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(198, 167, 94, 0.75);   /* gold-dim at reduced opacity */
+  line-height: 1;
+  z-index: 2;
+  transition: color 0.35s ease, opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.mac-gallery-card:hover .mac-gallery-num {
+  color: var(--gold-light);
+  opacity: 1;
+}
+
+/* ── Card title (bottom) ── */
+.mac-gallery-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 36px 16px 14px;
+  background: linear-gradient(to top, rgba(2,11,24,0.88) 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+  /* Initially hidden — slide up on hover */
+  transform: translateY(8px);
+  opacity: 0;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.35s ease;
+}
+
+.mac-gallery-card:hover .mac-gallery-label {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mac-gallery-label-text {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(232, 237, 244, 0.9);
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Subtle gold accent line on hover ── */
+.mac-gallery-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  z-index: 3;
+}
+
+.mac-gallery-card:hover::after {
+  opacity: 0.7;
+}
+
+/* ── Responsive: Tablet ── */
+@media (max-width: 1024px) {
+  .mac-gallery-row {
+    height: 300px;
+  }
+  /* Expand ratio is slightly reduced on tablet */
+  .mac-gallery-row:hover .mac-gallery-card {
+    flex: 0.6 1 0;
+  }
+  .mac-gallery-row:hover .mac-gallery-card:hover {
+    flex: 2.2 1 0;
+  }
+}
+
+/* ── Responsive: Tablet (3-column reflow) ── */
+@media (max-width: 860px) {
+  .mac-gallery-grid {
+    gap: 20px;
+  }
+  .mac-gallery-row {
+    height: 260px;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+  /* Show only 3 cards per row on tablet — hide cards 4 and 5 in each row */
+  .mac-gallery-row .mac-gallery-card:nth-child(4),
+  .mac-gallery-row .mac-gallery-card:nth-child(5) {
+    display: none;
+  }
+  .mac-gallery-row:hover .mac-gallery-card {
+    flex: 0.5 1 0;
+  }
+  .mac-gallery-row:hover .mac-gallery-card:hover {
+    flex: 2 1 0;
+  }
+}
+
+/* ── Responsive: Mobile ── */
+@media (max-width: 540px) {
+  .mac-gallery-section {
+    padding: 60px 0 72px;
+  }
+  .mac-gallery-grid {
+    gap: 16px;
+  }
+  .mac-gallery-row {
+    height: 220px;
+    gap: 6px;
+    /* On mobile, disable expansion — keep cards static */
+    pointer-events: none;
+  }
+  /* Show only 2 cards per row on mobile — hide cards 3, 4, 5 */
+  .mac-gallery-row .mac-gallery-card:nth-child(3),
+  .mac-gallery-row .mac-gallery-card:nth-child(4),
+  .mac-gallery-row .mac-gallery-card:nth-child(5) {
+    display: none;
+  }
+  /* Re-enable pointer events on cards themselves (just no expansion) */
+  .mac-gallery-row .mac-gallery-card {
+    pointer-events: auto;
+    flex: 1 1 0;
+  }
+  /* Disable expansion hover on mobile */
+  .mac-gallery-row:hover .mac-gallery-card {
+    flex: 1 1 0;
+  }
+  .mac-gallery-row:hover .mac-gallery-card:hover {
+    flex: 1 1 0;
+  }
+  /* Always show labels on mobile */
+  .mac-gallery-label {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .mac-gallery-num {
+    opacity: 0.85;
+  }
+  .mac-gallery-overlay {
+    opacity: 0.8;
+  }
+}
+
