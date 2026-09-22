@@ -7,7 +7,7 @@
   <meta name="description" content="Photo gallery of MetaTech fiber optic and telecom infrastructure projects across Saudi Arabia — aerial, civil, FTTH, HDD, splicing and more." />
   <link rel="icon" type="image/jpeg" href="logo.jpeg" />
   <link rel="stylesheet" href="css/style.css?v=3" />
-  <link rel="stylesheet" href="css/gallery.css?v=2" />
+  <link rel="stylesheet" href="css/gallery.css?v=4" />
 </head>
 <body>
 
@@ -178,7 +178,23 @@
         Back to Gallery
       </button>
       <span class="glb-folder-title" id="glbTitle"></span>
-      <span class="glb-image-count" id="glbCount"></span>
+      <div class="glb-header-right">
+        <button class="glb-autoplay-btn playing" id="glbPlayBtn" onclick="toggleAutoplay()" aria-label="Pause slideshow" title="Pause / Resume 2s loop (Space)">
+          <span class="glb-autoplay-dot"></span>
+          <svg class="glb-pause-icon" id="glbPauseIcon" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+            <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+          </svg>
+          <svg class="glb-play-icon" id="glbPlayIcon" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+            <polygon points="6 4 20 12 6 20 6 4"></polygon>
+          </svg>
+          <span id="glbPlayStatus">Loop 2s</span>
+        </button>
+        <span class="glb-image-count" id="glbCount"></span>
+      </div>
+    </div>
+    <div class="glb-progress-wrap" aria-hidden="true">
+      <div class="glb-progress-bar" id="glbProgressBar"></div>
     </div>
 
     <div class="glb-main">
@@ -190,8 +206,8 @@
       </button>
 
       <!-- Main image -->
-      <div class="glb-img-wrap">
-        <img id="glbMainImg" src="" alt="" />
+      <div class="glb-img-wrap" id="glbImgWrap">
+        <img id="glbMainImg" class="glb-slide-img current" src="" alt="" />
       </div>
 
       <!-- Next arrow -->
@@ -380,19 +396,112 @@
     // ── State ────────────────────────────────────────────────────────────────
     let currentFolder = null;
     let currentIndex  = 0;
+    const AUTOPLAY_INTERVAL = 2000; // 2 seconds loop
+    let autoplayTimer = null;
+    let isAutoplayActive = true;
 
-    const overlay   = document.getElementById('glb-overlay');
-    const mainImg   = document.getElementById('glbMainImg');
-    const glbTitle  = document.getElementById('glbTitle');
-    const glbCount  = document.getElementById('glbCount');
-    const glbStrip  = document.getElementById('glbStrip');
-    const glbPrev   = document.getElementById('glbPrev');
-    const glbNext   = document.getElementById('glbNext');
+    const overlay        = document.getElementById('glb-overlay');
+    const mainImg        = document.getElementById('glbMainImg');
+    const glbTitle       = document.getElementById('glbTitle');
+    const glbCount       = document.getElementById('glbCount');
+    const glbStrip       = document.getElementById('glbStrip');
+    const glbPrev        = document.getElementById('glbPrev');
+    const glbNext        = document.getElementById('glbNext');
+    const glbPlayBtn     = document.getElementById('glbPlayBtn');
+    const glbPlayIcon    = document.getElementById('glbPlayIcon');
+    const glbPauseIcon   = document.getElementById('glbPauseIcon');
+    const glbPlayStatus  = document.getElementById('glbPlayStatus');
+    const glbProgressBar = document.getElementById('glbProgressBar');
+
+    // ── Autoplay Management ──────────────────────────────────────────────────
+    function startAutoplay() {
+      stopAutoplayTimerOnly();
+      if (!isAutoplayActive) return;
+      if (!currentFolder || currentFolder.images.length <= 1) {
+        updateAutoplayUI();
+        return;
+      }
+      updateAutoplayUI();
+      triggerProgressBar();
+      autoplayTimer = setInterval(() => {
+        navigate(1, true);
+      }, AUTOPLAY_INTERVAL);
+    }
+
+    function stopAutoplayTimerOnly() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+      resetProgressBar();
+    }
+
+    function toggleAutoplay() {
+      isAutoplayActive = !isAutoplayActive;
+      if (isAutoplayActive) {
+        startAutoplay();
+      } else {
+        stopAutoplayTimerOnly();
+        updateAutoplayUI();
+      }
+    }
+
+    function restartAutoplayTimer() {
+      if (isAutoplayActive && currentFolder && currentFolder.images.length > 1) {
+        startAutoplay();
+      }
+    }
+
+    function updateAutoplayUI() {
+      if (!glbPlayBtn) return;
+      const hasMultiple = currentFolder && currentFolder.images.length > 1;
+      glbPlayBtn.style.display = hasMultiple ? 'inline-flex' : 'none';
+      if (isAutoplayActive && hasMultiple) {
+        glbPlayBtn.classList.add('playing');
+        glbPlayBtn.classList.remove('paused');
+        if (glbPlayIcon) glbPlayIcon.style.display = 'none';
+        if (glbPauseIcon) glbPauseIcon.style.display = 'inline-block';
+        if (glbPlayStatus) glbPlayStatus.textContent = 'Loop 2s';
+        glbPlayBtn.setAttribute('aria-label', 'Pause 2s slideshow');
+      } else {
+        glbPlayBtn.classList.remove('playing');
+        glbPlayBtn.classList.add('paused');
+        if (glbPlayIcon) glbPlayIcon.style.display = 'inline-block';
+        if (glbPauseIcon) glbPauseIcon.style.display = 'none';
+        if (glbPlayStatus) glbPlayStatus.textContent = 'Play';
+        glbPlayBtn.setAttribute('aria-label', 'Resume 2s slideshow');
+      }
+    }
+
+    function triggerProgressBar() {
+      if (!glbProgressBar) return;
+      glbProgressBar.classList.remove('animating');
+      glbProgressBar.style.width = '0%';
+      // Force DOM reflow so CSS animation restarts cleanly
+      void glbProgressBar.offsetWidth;
+      if (isAutoplayActive && currentFolder && currentFolder.images.length > 1) {
+        glbProgressBar.classList.add('animating');
+      }
+    }
+
+    function resetProgressBar() {
+      if (!glbProgressBar) return;
+      glbProgressBar.classList.remove('animating');
+      glbProgressBar.style.width = '0%';
+    }
+
+    function preloadNextImage() {
+      if (!currentFolder || currentFolder.images.length <= 1) return;
+      const nextIndex = (currentIndex + 1) % currentFolder.images.length;
+      const preloadImg = new Image();
+      preloadImg.src = currentFolder.images[nextIndex];
+    }
 
     // ── Open folder ──────────────────────────────────────────────────────────
     function openFolder(index) {
       currentFolder = folders[index];
       currentIndex  = 0;
+      isAutoplayActive = true; // Always start autoplay loop automatically on folder open
 
       // Header
       glbTitle.textContent = currentFolder.name;
@@ -403,34 +512,51 @@
         const thumb = document.createElement('div');
         thumb.className = 'glb-thumb' + (i === 0 ? ' active' : '');
         thumb.innerHTML = `<img src="${src}" alt="Photo ${i + 1}" loading="lazy" />`;
-        thumb.addEventListener('click', () => goTo(i));
+        thumb.addEventListener('click', () => {
+          goTo(i);
+          restartAutoplayTimer();
+        });
         glbStrip.appendChild(thumb);
       });
 
-      renderImage();
+      renderImage(0); // Initial render (no sliding transition)
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
+
+      // Start automatic 2-second loop
+      startAutoplay();
     }
 
     // ── Close folder ─────────────────────────────────────────────────────────
     function closeFolder() {
+      stopAutoplayTimerOnly();
       overlay.classList.remove('open');
       document.body.style.overflow = '';
       setTimeout(() => {
-        mainImg.src = '';
+        const glbWrap = document.getElementById('glbImgWrap');
+        if (glbWrap) glbWrap.innerHTML = '<img id="glbMainImg" class="glb-slide-img current" src="" alt="" />';
         glbStrip.innerHTML = '';
       }, 300);
     }
 
     // ── Navigate ─────────────────────────────────────────────────────────────
-    function navigate(dir) {
+    function navigate(dir, isAuto = false) {
+      if (!currentFolder) return;
       const total = currentFolder.images.length;
-      goTo((currentIndex + dir + total) % total);
+      goTo((currentIndex + dir + total) % total, dir);
+      if (!isAuto) {
+        restartAutoplayTimer();
+      } else {
+        triggerProgressBar();
+      }
     }
 
-    function goTo(index) {
+    function goTo(index, dir = 0) {
+      if (dir === 0 && index !== currentIndex) {
+        dir = index > currentIndex ? 1 : -1;
+      }
       currentIndex = index;
-      renderImage();
+      renderImage(dir);
 
       // Update thumbnail active state
       const thumbs = glbStrip.querySelectorAll('.glb-thumb');
@@ -442,16 +568,65 @@
       }
     }
 
-    function renderImage() {
+    function renderImage(dir = 0) {
+      if (!currentFolder) return;
       const src = currentFolder.images[currentIndex];
-      mainImg.style.opacity = '0';
-      mainImg.src = src;
-      mainImg.alt = `${currentFolder.name} – Photo ${currentIndex + 1}`;
-      mainImg.onload = () => { mainImg.style.opacity = '1'; };
       glbCount.textContent = `${currentIndex + 1} / ${currentFolder.images.length}`;
 
       glbPrev.style.display = currentFolder.images.length > 1 ? '' : 'none';
       glbNext.style.display = currentFolder.images.length > 1 ? '' : 'none';
+
+      const glbWrap = document.getElementById('glbImgWrap');
+      if (!glbWrap) return;
+
+      const activeImg = glbWrap.querySelector('.glb-slide-img.current');
+
+      // Initial load without sliding
+      if (dir === 0 || !activeImg || !activeImg.src) {
+        glbWrap.innerHTML = '';
+        const img = document.createElement('img');
+        img.id = 'glbMainImg';
+        img.className = 'glb-slide-img current';
+        img.src = src;
+        img.alt = `${currentFolder.name} – Photo ${currentIndex + 1}`;
+        glbWrap.appendChild(img);
+        preloadNextImage();
+        return;
+      }
+
+      // Direction: 1 = forward (scroll from right to left); -1 = backward (scroll from left to right)
+      const isForward = dir > 0;
+
+      // Clean up any lingering animations to prevent DOM accumulation
+      const oldExiting = glbWrap.querySelectorAll('.slide-out-left, .slide-out-right');
+      oldExiting.forEach(el => el.remove());
+
+      // Create new incoming slide image
+      const newImg = document.createElement('img');
+      newImg.className = `glb-slide-img incoming ${isForward ? 'from-right' : 'from-left'}`;
+      newImg.src = src;
+      newImg.alt = `${currentFolder.name} – Photo ${currentIndex + 1}`;
+      glbWrap.appendChild(newImg);
+
+      // Force browser reflow to register starting position
+      void newImg.offsetWidth;
+
+      // Synchronized slide/scroll animation
+      activeImg.className = `glb-slide-img ${isForward ? 'slide-out-left' : 'slide-out-right'}`;
+      newImg.className = 'glb-slide-img current slide-in';
+
+      // Clean up old active image once transition finishes (600ms)
+      setTimeout(() => {
+        if (activeImg && activeImg !== newImg && activeImg.parentNode === glbWrap) {
+          activeImg.remove();
+        }
+        if (newImg.parentNode === glbWrap) {
+          newImg.className = 'glb-slide-img current';
+          newImg.id = 'glbMainImg';
+        }
+      }, 620);
+
+      preloadNextImage();
     }
 
     // ── Keyboard navigation ──────────────────────────────────────────────────
@@ -460,11 +635,24 @@
       if (e.key === 'ArrowRight') navigate(1);
       if (e.key === 'ArrowLeft')  navigate(-1);
       if (e.key === 'Escape')     closeFolder();
+      if (e.code === 'Space') {
+        e.preventDefault();
+        toggleAutoplay();
+      }
     });
 
     // ── Click outside image to close ─────────────────────────────────────────
     overlay.addEventListener('click', (e) => {
       if (e.target === overlay) closeFolder();
+    });
+
+    // ── Tab visibility pause/resume ──────────────────────────────────────────
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAutoplayTimerOnly();
+      } else if (overlay.classList.contains('open') && isAutoplayActive) {
+        startAutoplay();
+      }
     });
   </script>
 

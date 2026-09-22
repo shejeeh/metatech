@@ -211,6 +211,7 @@
   color: #d9be80;
   font-weight: 600;
   text-shadow: 0 0 10px rgba(217, 190, 128, 0.25);
+  white-space: nowrap;
 }
 
 .legacy-quote {

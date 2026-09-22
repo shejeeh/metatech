@@ -123,7 +123,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 18px 28px;
+  padding: 16px 28px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   flex-shrink: 0;
 }
@@ -159,10 +159,100 @@
   letter-spacing: 0.01em;
 }
 
-.glb-image-count {
-  color: #6b8cae;
-  font-size: 0.85rem;
+.glb-header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
   margin-left: auto;
+}
+
+.glb-autoplay-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 162, 255, 0.12);
+  border: 1px solid rgba(0, 162, 255, 0.3);
+  color: #00d2ff;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+.glb-autoplay-btn:hover {
+  background: rgba(0, 162, 255, 0.22);
+  border-color: rgba(0, 162, 255, 0.6);
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(0, 162, 255, 0.35);
+}
+.glb-autoplay-btn.paused {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #94a3b8;
+}
+.glb-autoplay-btn.paused:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.glb-autoplay-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00e5ff;
+  box-shadow: 0 0 8px #00e5ff;
+  transition: background 0.2s, box-shadow 0.2s;
+  animation: glbPulse 1.5s infinite ease-in-out;
+}
+.glb-autoplay-btn.paused .glb-autoplay-dot {
+  background: #64748b;
+  box-shadow: none;
+  animation: none;
+}
+@keyframes glbPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.85); }
+}
+
+.glb-autoplay-btn svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.glb-image-count {
+  color: #90b0d3;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 2-second Progress Bar */
+.glb-progress-wrap {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.glb-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #0077ff, #00d2ff, #00f0ff);
+  box-shadow: 0 0 8px rgba(0, 210, 255, 0.6);
+  transform-origin: left;
+}
+.glb-progress-bar.animating {
+  width: 100%;
+  transition: width 2000ms linear;
 }
 
 /* Main viewer */
@@ -183,15 +273,62 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.glb-img-wrap img {
+.glb-slide-img {
+  position: absolute;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-  transition: opacity 0.2s ease;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
+  will-change: transform, opacity;
+}
+
+.glb-slide-img.current {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Scroll from right (forward / next / 2s loop) */
+.glb-slide-img.incoming.from-right {
+  transform: translate3d(100%, 0, 0);
+  opacity: 0.2;
+  z-index: 3;
+}
+
+/* Scroll from left (backward / prev) */
+.glb-slide-img.incoming.from-left {
+  transform: translate3d(-100%, 0, 0);
+  opacity: 0.2;
+  z-index: 3;
+}
+
+/* Slide in target */
+.glb-slide-img.slide-in {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+  z-index: 3;
+}
+
+/* Outgoing to left */
+.glb-slide-img.slide-out-left {
+  transform: translate3d(-100%, 0, 0);
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Outgoing to right */
+.glb-slide-img.slide-out-right {
+  transform: translate3d(100%, 0, 0);
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* prev / next arrows */
@@ -277,4 +414,23 @@
   .glb-prev { left: 6px; }
   .glb-next { right: 6px; }
   .glb-thumb { width: 60px; height: 45px; }
+
+  .glb-header {
+    padding: 12px 16px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .glb-folder-title {
+    font-size: 1rem;
+    order: 3;
+    width: 100%;
+    margin-top: 2px;
+  }
+  .glb-header-right {
+    gap: 8px;
+  }
+  .glb-autoplay-btn {
+    padding: 5px 10px;
+    font-size: 0.76rem;
+  }
 }
