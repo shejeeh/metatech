@@ -61,6 +61,7 @@
 }
 
 .service-num {
+  display: none;
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 700;
@@ -315,6 +316,7 @@
 
 /* ── Card number (top-left) ── */
 .mac-gallery-num {
+  display: none;
   position: absolute;
   top: 14px;
   left: 16px;

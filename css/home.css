@@ -371,6 +371,7 @@
 }
 
 .why-section .vc-num {
+  display: none;
   font-family: var(--font-heading, 'Inter', sans-serif);
   font-size: 4rem;
   font-weight: 900;

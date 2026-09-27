@@ -3,8 +3,8 @@
 /* ── Folder Grid ── */
 .gallery-folders {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: 1fr;
+  gap: 36px;
 }
 
 .folder-card {
@@ -27,7 +27,7 @@
 .folder-cover {
   position: relative;
   width: 100%;
-  height: 220px;
+  height: 480px;
   overflow: hidden;
 }
 .folder-cover img {
@@ -399,8 +399,8 @@
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .gallery-folders {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 }
 @media (max-width: 600px) {
@@ -408,7 +408,7 @@
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  .folder-cover { height: 180px; }
+  .folder-cover { height: 320px; }
   .glb-main { padding: 12px 52px; }
   .glb-nav { width: 38px; height: 38px; }
   .glb-prev { left: 6px; }
